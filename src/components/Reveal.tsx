@@ -28,7 +28,7 @@ export default function Reveal({
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.01, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(node);

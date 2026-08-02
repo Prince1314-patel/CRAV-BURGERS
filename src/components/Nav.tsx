@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { siteInfo } from "@/content/site";
 
@@ -14,12 +14,42 @@ const menuItems = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
     return () => {
       document.documentElement.style.overflow = "";
     };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (open) {
+      firstLinkRef.current?.focus();
+    } else {
+      toggleButtonRef.current?.focus();
+    }
   }, [open]);
 
   return (
@@ -42,6 +72,7 @@ export default function Nav() {
           </Link>
 
           <button
+            ref={toggleButtonRef}
             type="button"
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -75,15 +106,17 @@ export default function Nav() {
 
       <nav
         id="mobile-menu"
+        inert={!open ? true : undefined}
         className={clsx(
           "fixed inset-x-0 top-[72px] z-40 origin-top overflow-hidden bg-maroon text-cream transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <ul className="mx-auto flex max-w-[1280px] flex-col gap-2 px-6 py-8 sm:px-8 lg:px-12">
-          {menuItems.map((item) => (
+          {menuItems.map((item, index) => (
             <li key={item.label}>
               <Link
+                ref={index === 0 ? firstLinkRef : undefined}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="block border-b border-cream/15 py-4 font-display text-3xl font-semibold tracking-wide transition-colors hover:text-gold sm:text-4xl"
