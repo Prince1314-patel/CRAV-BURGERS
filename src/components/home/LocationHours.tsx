@@ -3,7 +3,7 @@ import { siteInfo } from "@/content/site";
 
 export default function LocationHours() {
   return (
-    <section id="location" className="bg-cream py-16 sm:py-24">
+    <section id="location" className="scroll-mt-24 bg-cream py-16 sm:py-24">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:px-12">
         <Reveal>
           <p className="font-body text-xs font-semibold tracking-[0.25em] text-maroon uppercase">

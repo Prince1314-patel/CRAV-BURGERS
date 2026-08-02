@@ -1,15 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { menuCategories } from "@/content/menu";
 
+// `menuName` is the exact item name as it appears in `src/content/menu.ts`,
+// used only to look up the current price. `name` is the display label shown
+// on the card (kept short/friendly, may differ slightly from the menu name).
 const signatureDishes = [
-  { slug: "vada-pav", name: "Vada Pav", price: "£2.50" },
-  { slug: "pani-puri", name: "Pani Puri", price: "£3.50" },
-  { slug: "samosa-chaat", name: "Samosa Chaat", price: "£5.50" },
-  { slug: "chole-bhature", name: "Chole Bhature", price: "£7.99" },
-  { slug: "chicken-momos", name: "Chicken Momos", price: "£8.99" },
-  { slug: "butter-chicken", name: "Butter Chicken", price: "£10.99" },
+  { slug: "vada-pav", name: "Vada Pav", menuName: "Vada Pav" },
+  { slug: "pani-puri", name: "Pani Puri", menuName: "Pani Puri (8pcs)" },
+  { slug: "samosa-chaat", name: "Samosa Chaat", menuName: "Samosa Chaat" },
+  { slug: "chole-bhature", name: "Chole Bhature", menuName: "Chole Bhature" },
+  { slug: "chicken-momos", name: "Chicken Momos", menuName: "Chicken Momos" },
+  { slug: "butter-chicken", name: "Butter Chicken", menuName: "Butter Chicken" },
 ];
+
+function priceFor(menuName: string): string {
+  for (const category of menuCategories) {
+    const item = category.items.find((item) => item.name === menuName);
+    if (item) return item.price;
+  }
+  return "";
+}
 
 export default function MenuTeaser() {
   return (
@@ -39,7 +51,7 @@ export default function MenuTeaser() {
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={`/img/teaser/${dish.slug}.jpg`}
-                    alt={dish.name}
+                    alt=""
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover"
@@ -47,7 +59,9 @@ export default function MenuTeaser() {
                 </div>
                 <div className="flex items-center justify-between p-5">
                   <h3 className="font-display text-lg font-semibold text-ink">{dish.name}</h3>
-                  <p className="font-display text-lg font-semibold text-maroon">{dish.price}</p>
+                  <p className="font-display text-lg font-semibold text-maroon">
+                    {priceFor(dish.menuName)}
+                  </p>
                 </div>
               </article>
             </Reveal>

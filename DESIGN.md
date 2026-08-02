@@ -1,167 +1,161 @@
 ---
-name: CRAV — Artisan Smashed Burgers
-description: Bold, sticker-pop burger brand site — chunky rounded display type over a warm beige ground, hot red and mustard doing all the talking.
+name: Street Bites — Indian Street Food
+description: Warm, appetite-forward restaurant site — deep maroon and gold on a soft cream ground, with a London×India skyline motif and a cart icon that travels the page as you scroll.
 colors:
-  beige: "#f5e3cd"
-  red: "#f91814"
-  mustard: "#ffd750"
-  mustard-dark: "#f4a804"
-  ink: "#1b1b1b"
+  maroon: "#5c0f1f"
+  maroon-dark: "#3d0a15"
+  gold: "#e8b34b"
+  cream: "#f6ecdc"
+  ink: "#241009"
   white: "#ffffff"
 typography:
   display:
-    fontFamily: "Modak, cursive"
-    fontSize: "clamp(3.5rem, 11vw, 9rem)"
-    fontWeight: 400
-    lineHeight: 0.9
-    letterSpacing: "0.01em"
+    fontFamily: "'Playfair Display', serif"
+    fontSize: "clamp(2rem, 5vw, 4.5rem)"
+    fontWeight: 700
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
   body:
-    fontFamily: "'Mouse Memoirs', sans-serif"
+    fontFamily: "'Poppins', sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
   label:
-    fontFamily: "'Mouse Memoirs', sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 400
+    fontFamily: "'Poppins', sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "0.08em"
+    letterSpacing: "0.25em"
 rounded:
-  sm: "10px"
-  md: "24px"
-  lg: "48px"
-  pill: "999px"
+  sm: "8px"
+  md: "20px"
+  lg: "40px"
 spacing:
   sm: "16px"
   md: "32px"
   lg: "64px"
-  xl: "128px"
+  xl: "96px"
 components:
   button-primary:
-    backgroundColor: "{colors.red}"
+    backgroundColor: "{colors.maroon}"
     textColor: "{colors.white}"
     typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "20px 40px"
+    rounded: "999px"
+    padding: "12px 24px"
   button-primary-hover:
-    backgroundColor: "{colors.ink}"
+    backgroundColor: "{colors.maroon-dark}"
     textColor: "{colors.white}"
-    rounded: "{rounded.pill}"
-    padding: "20px 40px"
+    rounded: "999px"
+    padding: "12px 24px"
   button-secondary:
-    backgroundColor: "{colors.mustard}"
+    backgroundColor: "{colors.gold}"
     textColor: "{colors.ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "18px 36px"
-  card-menu:
+    rounded: "999px"
+    padding: "16px 32px"
+  card:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
     typography: "{typography.body}"
     rounded: "{rounded.md}"
-    padding: "32px"
+    padding: "24px"
 ---
 
-# Design System: CRAV — Artisan Smashed Burgers
+# Design System: Street Bites — Indian Street Food
 
 ## Overview
 
-**Creative North Star: "The Flat-Top Sticker Shop"**
+**Creative North Star: "The Street-Corner Stall, Dressed Up for the High Street"**
 
-CRAV reads like a butcher-paper menu board crossed with a skate-brand sticker sheet: enormous, gummy, rounded-off lettering stamped straight onto warm butcher-beige, with fried-egg-yellow and hot-sauce-red doing the only shouting in the room. Nothing here is polite or corporate — headlines are oversized to the point of spilling past their container, ingredient photography is cut out and dropped in at an angle like stickers peeled off a sheet, and every section resolves to a single loud, round-cornered call to action. The system trusts two typefaces to carry all of the personality: a chunky bubble display face for anything meant to be *felt*, and a friendly rounded hand-sans for anything meant to be *read*. There is no serif, no hairline, no restraint — restraint is the thing this brand is refusing.
+Street Bites reads like a well-kept Indian street-food stall that's moved into a proper Wolverhampton shopfront: deep maroon and warm gold carry the same energy as spice-stall awnings and festival signage, set against a soft cream page ground that keeps the food photography and long menu lists easy to read. A recurring London×India skyline line-art strip — Big Ben and the London Eye giving way to India Gate and a Taj Mahal dome — runs as a section divider, quietly stating the brand's "London meets India" premise without needing a paragraph to explain it. The signature touch is a small wheeled food-cart icon that travels left-to-right along a thin dashed gold track as the visitor scrolls the homepage, echoing the cart in the Street Bites logo mark and turning the page scroll itself into a nod to a street vendor's cart making its way down the road.
 
 **Key Characteristics:**
-- Warm beige page ground, never white, never dark-mode — this is a daylight, butcher-paper surface.
-- Two-color accent system (red for action, mustard for warmth/energy) used at page scale, not as sprinkled chips.
-- Display type set enormous and tight-leaded; body type stays small, rounded, and quiet by comparison.
-- Real ingredient/product photography treated as cut-out "stickers": drop shadow, slight rotation, layered over the beige ground rather than boxed into cards.
-- Thick, fully-rounded (pill) buttons and containers — no sharp corners anywhere in the interactive layer.
+- Warm cream page ground with a deep maroon primary accent and a gold secondary accent — evokes spice, warmth, and festival color without tipping into gaudy.
+- A serif display face (Playfair Display) for headings paired with a clean geometric sans (Poppins) for body copy and menu text — editorial warmth up top, easy legibility for long price lists below.
+- The London×India skyline motif as a recurring, low-opacity section-divider device, always rendered in `currentColor` so it can sit on either maroon or cream backgrounds.
+- A single signature scroll-linked animation (the traveling cart icon) rather than motion sprinkled everywhere — most other content uses simple fade/rise-in reveals on scroll.
+- Editorial alternating-side layout on the `/menu` page: each category's dish photo and price list swap sides down the page instead of a plain grid.
 
 ## Colors
 
-Two accents on one warm neutral ground; no dark mode — this brand lives in daylight.
+One primary accent (maroon) and one secondary accent (gold) on a warm cream ground; no dark mode.
 
 ### Primary
-- **Hot Sauce Red** (`#f91814`): every primary CTA ("Order Now", "Send Craving"), the color of urgency and appetite. Used on ≤10% of any viewport — it always marks the one thing to click.
+- **Maroon** (`#5c0f1f`) / **Maroon Dark** (`#3d0a15`): primary buttons, the "Order Online" section background, headings that need weight, the footer background. Maroon Dark is the pressed/hover state of Maroon.
 
 ### Secondary
-- **Fried-Egg Mustard** (`#ffd750`) / **Mustard Dark** (`#f4a804`): warmth accents — badges, secondary buttons, underlines, hover states, the "peel" highlight behind stat numbers. Mustard Dark is the pressed/hover state of Mustard, never a separate role.
+- **Gold** (`#e8b34b`): eyebrow labels, the scroll-cart's dashed track, secondary buttons ("Order on Just Eat"), hover accents, focus-visible outlines, text-selection highlight.
 
 ### Neutral
-- **Butcher Beige** (`#f5e3cd`): the page background everywhere. This is the brand's signature surface — it never shifts to white or dark.
-- **Char Ink** (`#1b1b1b`): body text, outlines, footer background. Doubles as a near-black "ink" for thick borders around cards and buttons.
-- **Paper White** (`#ffffff`): reserved for card surfaces that need to separate from the beige ground (menu cards, form fields) and for text set on red/ink.
+- **Cream** (`#f6ecdc`): the page background everywhere outside the maroon sections — this is the brand's default surface.
+- **Ink** (`#241009`): body text and borders; a warm near-black rather than pure black, consistent with the maroon-led palette.
+- **White** (`#ffffff`): card surfaces that need to separate from the cream ground (menu teaser cards, team cards) and text set on maroon/gold.
 
 ### Named Rules
-**The Daylight Rule.** The page ground is always Butcher Beige. There is no dark theme — dropping to near-black backgrounds anywhere but the footer and ink accents breaks the brand.
+**The Cream Ground Rule.** The default page background is Cream everywhere except sections that deliberately invert to Maroon (e.g. Order Online) for emphasis. There is no dark theme.
 
 ## Typography
 
-**Display Font:** Modak (with cursive/system fallback)
-**Body Font:** Mouse Memoirs (with sans-serif fallback)
+**Display Font:** Playfair Display (serif, weights 600/700)
+**Body Font:** Poppins (sans-serif, weights 400/500/600)
 
-**Character:** Modak is a single-weight, extremely rounded bubble-letter display face — it is the brand's voice and is never set below ~40px. Mouse Memoirs is a friendly, slightly rounded sans built for small sizes; it carries every sentence of actual reading.
+**Character:** Playfair Display brings editorial, slightly formal warmth to headings — restaurant-menu-board energy without being a script or display-only novelty face. Poppins is a clean geometric sans that stays legible at the small sizes needed for long menu item lists and price columns.
 
 ### Hierarchy
-- **Display** (400, `clamp(3.5rem, 11vw, 9rem)`, line-height 0.9): hero wordmark ("CRAV"), page-section headlines ("FEEL THE CHANGE", "SMASHED FRESH"). Always set in Modak, always tight-leaded, frequently stacked across 2-3 lines.
-- **Headline** (400, `clamp(1.5rem, 4vw, 2.5rem)`, line-height 1.05): sub-headlines inside sections ("JUICY CHEESY FULLY LOADED"). Modak, uppercase source copy kept as-is.
-- **Body** (400, 1rem–1.125rem, line-height 1.5): paragraph copy. Mouse Memoirs, sentence case, max ~60ch measure.
-- **Label** (400, 0.75–0.85rem, letter-spacing 0.08em, uppercase): nav items, eyebrows ("THE BURGER", "EST. 1997 — NAVARRA, ESPAÑA"), quick-detail chips, button text. Mouse Memoirs uppercase.
+- **Display** (700, `clamp(2rem, 5vw, 4.5rem)`, line-height ~1.05): hero headline, section headings ("A Taste of the Menu," "Why We Are Your Best Choice"), category names on `/menu`. Always Playfair Display.
+- **Body** (400, 1rem, line-height 1.5): paragraph copy, descriptions, menu item names. Poppins, sentence case.
+- **Label** (600, 0.75rem, letter-spacing 0.25em, uppercase): eyebrow text above headings ("Signature Dishes," "Why Choose Us"), nav links, button text. Poppins uppercase, wide-tracked.
+- **Price** (600, ~1rem, Playfair Display): menu prices are set in the display face at body-adjacent size so they read as considered typographic moments rather than plain data, while staying legible next to the Poppins item name.
 
 ### Named Rules
-**The One-Voice Display Rule.** Modak only ever appears for brand-voice moments (hero words, section titles, the footer wordmark) — never for body copy, form labels, or dense information (menu macros, prices), which stay in Mouse Memoirs for legibility.
+**The Eyebrow Rule.** Every major section opens with a small uppercase gold Label line above its Display headline — this pairing is the site's consistent way of introducing a new section and should not be dropped even in short sections.
 
 ## Layout
 
-Single-column, generously spaced, section-per-viewport rhythm typical of a scroll-driven marketing site. Container max-width ~1280px with 24–32px side gutters on mobile, up to 96px on desktop. Vertical rhythm is loose: `{spacing.xl}` (128px+) between major sections, `{spacing.lg}` (64px) between a section's header and its body content. Grids collapse from multi-column (2–3 col for stat blocks, ingredient cards, menu cards) to single-column under ~768px. Sticker images are positioned with slight overlap into the surrounding whitespace (small negative margins / absolute offsets), not confined to a strict grid cell.
+Single-column, section-per-scroll marketing layout on `/`, with a container max-width of 1280px and side padding of 24px (mobile) up to 48px (desktop, `px-12`). Vertical rhythm between sections is generous (64–96px, `py-16`–`py-24`). On `/menu`, categories alternate the dish photo between left and right down the page (`lg:order-2` swap) inside a two-column grid that collapses to one column below `lg`. Cards (menu teaser, team, why-choose-us) sit in responsive grids that collapse from 3–4 columns to 1 column on mobile.
 
 ## Elevation & Depth
 
-Flat by default — no ambient drop shadows on cards or buttons. Depth comes from layering: sticker-style cutout images cast one deliberate, hard-edged drop shadow (to sell the "peeled sticker" illusion) and sit above flat color/beige panels. Menu and ingredient cards use a thick solid ink or colored border instead of a shadow to separate from the beige ground.
-
-### Named Rules
-**The Sticker Shadow Rule.** Only cutout product/ingredient imagery gets a shadow (simulating a sticker lifted off the page). UI chrome — buttons, nav, cards — stays flat and relies on color and border instead.
+Flat by default — no ambient drop shadows. Separation between a card and the cream ground comes from a solid white card background plus a thin 2px maroon-tinted border (`border-maroon/15`), not shadow. The only "floating" element is the scroll-linked cart icon, which sits above a thin dashed gold line representing its track.
 
 ## Shapes
 
-Fully rounded, pill-shaped interactive elements (`{rounded.pill}` on all buttons and chips) paired with softly rounded containers (`{rounded.md}` ≈ 24px on cards, `{rounded.lg}` ≈ 48px on large image panels). No sharp 0-radius corners anywhere in the interactive layer — the brand's bubble-letter logic extends to every shape on the page.
+Soft-rounded rather than sharp or fully pill-shaped: `radius-sm` (8px) for small chips, `radius-md` (20px) for cards and images, `radius-lg` (40px) for large feature panels. Buttons use a fully rounded pill shape for a friendly, food-truck-adjacent feel, while cards and photos use the medium radius so they read as considered content blocks rather than stickers.
 
 ## Components
 
 ### Buttons
-- **Shape:** fully rounded pill (`{rounded.pill}`).
-- **Primary:** Hot Sauce Red background, white Mouse Memoirs label text (uppercase, letter-spaced), generous padding (~20px/40px). Used for every "Order Now" / "Send Craving" CTA.
-- **Hover / Focus:** background shifts to Char Ink with a slight upward translate (2–4px) and shadow lift; focus-visible gets a mustard outline ring for keyboard users.
-- **Secondary:** Mustard background, ink text — used for lower-emphasis actions (e.g. "Later" on the cookie banner).
+- **Shape:** fully rounded pill.
+- **Primary:** Maroon background, white Poppins label text (uppercase, wide-tracked), used for "View Full Menu," in-page navigation CTAs.
+- **On maroon sections:** Gold background, ink text (e.g. "Order on Just Eat") for the highest-contrast action against a maroon backdrop; a bordered cream-outline variant (e.g. "Order on Uber Eats") for the secondary action in the same section.
+- **Hover / Focus:** background darkens (Maroon → Maroon Dark, Gold → white) on hover; focus-visible gets a 3px gold outline ring for keyboard users.
 
 ### Cards / Containers
-- **Corner Style:** `{rounded.md}` (~24px).
-- **Background:** Paper White on the menu grid (so items pop off beige); beige-on-beige with an ink border elsewhere (ingredient/spice callouts).
-- **Shadow Strategy:** none on the card itself; only the product photo inside it casts the sticker shadow.
-- **Border:** 2–3px solid Char Ink on cards that sit directly on the beige ground, omitted on white cards.
-- **Internal Padding:** `{spacing.md}` (32px).
-
-### Inputs / Fields
-- **Style:** Paper White fill, thick (2–3px) Char Ink border, `{rounded.sm}`–`{rounded.md}` corners, Mouse Memoirs placeholder text in uppercase label style.
-- **Focus:** border shifts to Hot Sauce Red, no glow.
+- **Corner Style:** `radius-md` (20px).
+- **Background:** White, to separate from the cream page ground.
+- **Shadow Strategy:** none — separation comes from a 2px `border-maroon/15` border.
+- **Internal Padding:** 20–32px depending on card density (team cards more generous, menu teaser cards tighter around the image).
 
 ### Navigation
-- Logo "CRAV" set in Modak at label-adjacent scale, always top-left, links home. Right side keeps one visible link ("Burgers") plus a hamburger that opens a full label-style menu (Mouse Memoirs, uppercase, generous line-height) over a beige or ink panel. Active/hover state underlines or shifts to red.
+- Sticky top nav in cream with the wordmark "Street Bites" (maroon + gold accent). `/menu`'s category jump-nav is a second sticky bar of pill-shaped category links, positioned below the nav and below the scroll-cart's track so the two sticky layers never visually overlap.
 
-### Sticker Ingredient Cutout (signature component)
-Individual ingredient photography (lettuce, tomato, cheese, patty) cut out against transparency, given a single hard drop shadow, and placed at a slight rotation over the beige ground — implemented here as a scroll/hover-reactive tilt+float rather than the reference site's literal path animation, in the same expressive spirit.
+### Scroll Cart (signature component)
+A small wheeled cart icon (`public/img/cart-icon.png`) that travels along a thin dashed gold track fixed just under the main nav, its horizontal position driven by overall page scroll progress (0% at the top of the page, fully across the track at the bottom). Hidden below `md` breakpoints and replaced with a static (non-animated) position when `prefers-reduced-motion` is set.
+
+### Skyline Divider (signature component)
+An inline SVG strip combining London landmarks (Big Ben, London Eye, Tower Bridge) on the left half and Indian landmarks (India Gate, Taj Mahal dome, a minaret) on the right half of one continuous viewBox, rendered in `currentColor` at low opacity. Used in the footer and hero as a divider that visually states the brand's London×India premise.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the page ground Butcher Beige (`#f5e3cd`) on every route; it is the brand's signature surface.
-- **Do** reserve Hot Sauce Red for the single primary action per section.
-- **Do** set brand-voice headlines in Modak, oversized and tight-leaded; keep all reading copy in Mouse Memoirs.
-- **Do** give every button and card a fully rounded silhouette — no sharp corners.
+- **Do** keep the page ground Cream on every section except deliberate Maroon-inverted sections.
+- **Do** pair every section heading with a small uppercase Gold eyebrow label above it.
+- **Do** set headings in Playfair Display and all reading/menu copy in Poppins.
+- **Do** respect `prefers-reduced-motion` for the scroll-cart and scroll-reveal animations — both must fall back to a static presentation.
 
 ### Don't:
-- **Don't** introduce a dark theme or dark section backgrounds outside the ink footer.
-- **Don't** set dense information (prices, macros, forms) in Modak — it is unreadable below display sizes.
-- **Don't** add ambient drop shadows to flat UI chrome; reserve shadow for sticker-style product cutouts only.
-- **Don't** square off buttons or cards — sharp corners contradict the bubble-letter identity.
+- **Don't** introduce a dark theme or dark section backgrounds outside the Maroon-inverted sections.
+- **Don't** stack the scroll-cart's dashed track and the `/menu` category nav in the same vertical band — keep their sticky `top` offsets far enough apart that they never overlap.
+- **Don't** add ambient drop shadows to cards or buttons; rely on the white-card-on-cream + border pattern instead.
+- **Don't** duplicate visible heading text in adjacent image `alt` attributes — use `alt=""` when a heading right next to the image already states the same name.

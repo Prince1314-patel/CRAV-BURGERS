@@ -7,42 +7,56 @@
 web
 
 ## Users
-[INFERRED — no interview response received; substituted from the explicit brief.]
-Anyone visiting the site as a prospective customer of CRAV, a fictional/concept artisan smashed-burger restaurant brand ("Est. 1997 — Navarra, España"). The build's actual audience is the requester, who asked for a faithful clone of the live reference site https://www.cravburgers.shop/ for study/portfolio purposes.
+
+Prospective and existing customers of Street Bites, an Indian street-food restaurant at 1A North Street, Wolverhampton, WV1 1RE (Streetbites Food Limited, Company No. 17131409). Visitors are people browsing the menu, checking hours/location, or looking to order delivery/collection through Just Eat or Uber Eats.
 
 ## Product Purpose
-[INFERRED] A marketing site for CRAV, a smashed-burger restaurant/brand: convert visitors into orders ("Order Now" → /menu), communicate brand story and ingredient quality (Our Spices), and provide a way to get in touch (Contact). This build's purpose is to faithfully reproduce that reference site — same content, structure, brand, and energy — as a new Next.js implementation using the real assets pulled from the live site.
+
+A marketing and informational site for an already-open, trading restaurant: communicate what Street Bites is (Indian street food — chaat, vada pav, momos, curries, dosa and more) and where it is, showcase the menu, and route visitors to the two delivery partners (Just Eat, Uber Eats) for ordering. There is no on-site ordering, cart, or checkout — this site's job is to inform and hand off to the delivery apps.
 
 ## Positioning
-[INFERRED] Artisan/craft smashed-burger brand differentiated on ingredient obsession ("a short ingredient list, obsessive about every item"), a signature preparation (smashed hot on the flat-top, chili honey glaze, melted cheddar), and an "est. 1997, Navarra, España" heritage story, presented with a bold, high-energy, sticker/pop visual identity rather than a typical minimalist restaurant site.
+
+An authentic Indian street-food concept — not a generic curry house — built around real street-vendor dishes (chaat, vada pav, dabeli, momos) alongside familiar mains and curries, presented with a bold maroon/gold visual identity and a "Taste of Street Culture" tagline that ties the food back to its street-food roots.
 
 ## Operating Context
-- 4 routes: Home (`/`), Menu (`/menu`), Our Spices (`/spices`), Contact (`/contact`).
-- No backend/CMS — content is static/hardcoded; menu "cart" is client-side only (no checkout); contact form has no server (mailto or local success state).
-- Reference implementation is Next.js (App Router) + next/image; this rebuild target is also Next.js 16 + Tailwind v4 + React 19, `motion` + `clsx` already installed.
+
+- 2 routes: Home (`/`, one-page scrolling marketing site) and Menu (`/menu`, dedicated full categorized menu page).
+- No backend/CMS — all content (menu items, prices, site info, hours) is static/hardcoded in typed content files under `src/content/`. No cart, no checkout, no server-side logic.
+- Ordering happens entirely off-site: "Order Online" links out to Just Eat and Uber Eats.
+- Built on Next.js 16 (App Router) + Tailwind CSS v4 + React 19, using `motion` for the scroll-linked cart animation and scroll-reveal effects, and `clsx` for conditional classes.
 
 ## Capabilities and Constraints
-- Real photography/asset files already downloaded into `public/img/` and `public/img-webp/` from the live site — use these, do not fabricate placeholder imagery.
-- Fonts: Modak (display) + Mouse Memoirs (body/UI), both Google Fonts, load via `next/font/google`.
-- Palette already extracted from live computed CSS: beige `#f5e3cd` (bg), red `#f91814`, mustard `#ffd750` / `#f4a804`, black `#1b1b1b`, white.
-- [INFERRED — unanswered] Treating this as a study/portfolio clone: original brand name "CRAV", the "Est. 1997 — Navarra, España" heritage line, and all scraped copy are kept verbatim rather than swapped for a real/different business.
-- [INFERRED — unanswered] The live site's `/contact` page shows a real dismissible notice: *"This is a concept website created by Anyflow Agency... reach out at anyflowagency@gmail.com"*. Kept verbatim as part of the original site's real content, since the ask was for "the same website." If this is ever adapted into an actual business site, this notice should be removed first.
+
+- The business is live/open and trading now — there is no "coming soon" framing anywhere on the site.
+- Real assets used where available (storefront photo, grand-opening poster dish photos); many image slots are still placeholders pending real photography — see `LAUNCH-CHECKLIST.md` at the repo root for the exact list of files still needed before launch.
+- Contact info that must appear verbatim: phone `+44 7438 017394`, email `streetbites.wv1@gmail.com`, address `1A North Street, Wolverhampton, WV1 1RE`, legal name `Streetbites Food Limited` (Company No. 17131409).
+- Delivery links currently point to Just Eat/Uber Eats *search results* for "Street Bites Wolverhampton," not confirmed direct store-page URLs — flagged for owner confirmation before launch.
+- Instagram/Facebook handles (`@Streetbites` on both) are unverified guesses, not confirmed with the business — flagged for owner confirmation before launch.
+- Opening hours and the 3 "meet the team" role descriptions are currently placeholder content pending real details from the owner.
+- No email capture, no mailing list, no analytics/tracking scope defined.
 
 ## Brand Commitments
-- Name: CRAV. Tagline context: "Artisan Smashed Burgers", "Est. 1997 — Navarra, España".
-- Voice: bold, energetic, short punchy all-caps headlines, playful ("Feel It", "Craving...", "Eat Like You Mean It").
-- Visual identity: chunky rounded display type (Modak) + rounded sans (Mouse Memoirs), sticker-style ingredient cutouts, thick outlines, beige/red/mustard palette.
+
+- Name: Street Bites. Tagline: "Taste of Street Culture."
+- Voice: warm, inviting, food-forward — describing real street-vendor recipes and a "London meets India" fusion angle (rooted in Indian street culture, served in Wolverhampton).
+- Visual identity: deep maroon + gold/cream palette, a wheeled food-cart logo mark, and a recurring London×India skyline line-art motif used as a section-divider device — reflecting the brand's UK-meets-India positioning.
+- Signature interaction: a food-cart icon travels left-to-right along a thin dashed track as the visitor scrolls the page, evoking the cart "traveling the street."
 
 ## Evidence on Hand
-- Full page copy scraped from live site DOM for all 4 routes (hero, about/top-classic, experience, takeaway, feel-it CTA, menu items with prices/macros, spices/ingredient story, contact form + notice modal, nav + footer).
-- Real image assets in `public/img/` (plane.png, burgerselfie.png, burger-boy.png) and `public/img-webp/` (burgerH, about-1/2/3, burgerwithhands, cheesyBurger, cheese-logo, cheese, tomato, meat, lettuce, fries, burger, berlin/london/newyork/sydney/tokyo, cta, spices, farmtobite, lettuceimg, tomatoimg, cheeseimg, tikki, bun, smile).
-- No absences beyond: no real backend, no real menu photography per-item (site uses shared hero imagery, not per-burger photos), no real business address/phone (only "Est. 1997 — Navarra, España" and city names for the takeaway section, which are stylistic, not literal locations).
+
+- Registered company details confirmed via Companies House (STREETBITES FOOD LIMITED, No. 17131409, SIC 56103 "Take-away food shops and mobile food stands").
+- A real storefront photo (shopfront signage, illuminated "OPEN" sign, delivery-partner stickers for Just Eat and Uber Eats).
+- A "Grand Opening" promotional poster with contact details (phone, email) and dish photography; its printed opening date is outdated and not used, but its imagery and contact details are still valid.
+- A full menu PDF (~90 items) covering: Chaat Corner, Street Bites Special, Rolls & Crispy Bites, Burgers/Wraps/Sandwiches, Chips & Sides, Mains & Rice, Momo Station, Dosa Corner, Indian Veg Curries, Chicken Curries, Paratha Corner, Tea & Coffee, Soft Drinks, Energy Drinks, Milkshakes — fully transcribed into `src/content/menu.ts`.
+- Absences: no real per-dish photography for most menu categories yet (placeholders), no confirmed opening hours, no confirmed team member details, no confirmed social/delivery-app URLs. All tracked in `LAUNCH-CHECKLIST.md`.
 
 ## Product Principles
-1. Faithfulness over invention — reproduce the reference site's content, structure, and brand truthfully; do not invent new claims, testimonials, or pricing.
-2. Real assets only — every image comes from the downloaded `public/img*` set; no stock placeholders.
-3. Bold over generic — the site's visual energy (chunky type, high contrast, playful motion) is a core brand asset, not decoration to be tamed.
-4. No backend, no shortcuts — cart and contact form are honestly client-side; do not fake persistence or real checkout.
+
+1. Inform, then hand off — the site's job is to build appetite and confidence, then route to Just Eat/Uber Eats for the actual order; it does not attempt to replace those platforms.
+2. Real content over invention — menu items, prices, and business details come from verified sources (Companies House, the menu PDF, the storefront photo); anything still unverified (hours, socials, delivery links, team bios) is clearly flagged for owner confirmation rather than presented as fact.
+3. Content lives in data, not components — menu items, prices, and site info are edited in `src/content/*.ts` files, not scattered through component code, so a non-developer editing prices only needs to touch one typed file.
+4. No backend, no shortcuts — no fake cart, no fake checkout, no simulated persistence; every "order" action is an honest external link.
 
 ## Accessibility & Inclusion
-[Not established in interview; no product-specific requirement beyond standard web a11y — apply standard practice (semantic landmarks, alt text already scraped from live site, focus-visible states, reduced-motion support).]
+
+Standard web a11y practice: semantic landmarks, alt text on informative imagery (empty `alt=""` on images that are purely decorative or duplicate an adjacent heading), visible focus states, and `prefers-reduced-motion` support for the scroll-linked cart animation and scroll-reveal effects (both fall back to a static, non-animated presentation).

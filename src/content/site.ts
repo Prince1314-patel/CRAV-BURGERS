@@ -12,6 +12,8 @@ export const siteInfo = {
   phone: "+447438017394",
   phoneDisplay: "+44 7438 017394",
   email: "streetbites.wv1@gmail.com",
+  // Unverified handles — guessed from the business name, not confirmed with
+  // the owner. Confirm the real Instagram/Facebook profile URLs before launch.
   social: {
     instagram: "https://instagram.com/Streetbites",
     facebook: "https://facebook.com/Streetbites",

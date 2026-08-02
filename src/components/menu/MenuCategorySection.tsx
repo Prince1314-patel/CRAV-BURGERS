@@ -15,7 +15,7 @@ export default function MenuCategorySection({
   return (
     <section
       id={category.slug}
-      className="scroll-mt-32 border-b border-maroon/10 py-14 sm:py-20"
+      className="scroll-mt-40 border-b border-maroon/10 py-14 sm:py-20"
     >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-8 lg:px-12">
         <div
@@ -31,7 +31,7 @@ export default function MenuCategorySection({
           >
             <Image
               src={category.image}
-              alt={category.name}
+              alt=""
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"

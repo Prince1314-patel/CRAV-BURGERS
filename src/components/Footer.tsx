@@ -51,16 +51,36 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-2 font-body text-sm text-cream/80">
-            <a href={siteInfo.social.instagram} className="hover:text-gold">
+            <a
+              href={siteInfo.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold"
+            >
               Instagram @Streetbites
             </a>
-            <a href={siteInfo.social.facebook} className="hover:text-gold">
+            <a
+              href={siteInfo.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold"
+            >
               Facebook @Streetbites
             </a>
-            <a href={siteInfo.delivery.justEat} className="hover:text-gold">
+            <a
+              href={siteInfo.delivery.justEat}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold"
+            >
               Order on Just Eat
             </a>
-            <a href={siteInfo.delivery.uberEats} className="hover:text-gold">
+            <a
+              href={siteInfo.delivery.uberEats}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold"
+            >
               Order on Uber Eats
             </a>
           </div>

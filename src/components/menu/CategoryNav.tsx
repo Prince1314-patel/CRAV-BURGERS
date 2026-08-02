@@ -4,7 +4,7 @@ export default function CategoryNav({ categories }: { categories: MenuCategory[]
   return (
     <nav
       aria-label="Menu categories"
-      className="sticky top-[65px] z-30 -mx-6 overflow-x-auto border-b border-maroon/15 bg-cream/95 px-6 py-3 backdrop-blur-sm sm:top-[77px] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12"
+      className="sticky top-[89px] z-30 overflow-x-auto border-b border-maroon/15 bg-cream/95 px-6 py-3 backdrop-blur-sm sm:top-[101px] sm:px-8 lg:px-12"
     >
       <ul className="flex w-max gap-2 sm:gap-3">
         {categories.map((category) => (

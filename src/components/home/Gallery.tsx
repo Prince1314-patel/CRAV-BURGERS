@@ -21,7 +21,10 @@ export default function Gallery() {
       </div>
 
       <Reveal delay={100} className="mt-10">
-        <div className="scrollbar-none flex gap-4 overflow-x-auto px-6 pb-4 sm:px-8 lg:px-12">
+        <div
+          className="flex gap-4 overflow-x-auto px-6 pb-4 [&::-webkit-scrollbar]:hidden sm:px-8 lg:px-12"
+          style={{ scrollbarWidth: "none" }}
+        >
           {galleryImages.map((image) => (
             <div
               key={image.src}
