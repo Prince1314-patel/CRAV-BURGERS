@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { siteInfo } from "@/content/site";
 
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Our Spices", href: "/spices" },
-  { label: "Locations", href: "/#takeaway" },
-  { label: "Contact", href: "/contact" },
+  { label: "Menu", href: "/menu" },
+  { label: "Order Online", href: "/#order-online" },
+  { label: "Find Us", href: "/#location" },
 ];
 
 export default function Nav() {
@@ -23,22 +23,22 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-beige/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className="font-display text-3xl leading-none tracking-wide text-ink sm:text-4xl"
+          className="font-display text-2xl font-bold tracking-wide text-maroon sm:text-3xl"
           onClick={() => setOpen(false)}
         >
-          CRAV
+          Street <span className="text-gold">Bites</span>
         </Link>
 
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
             href="/menu"
-            className="hidden rounded-full bg-red px-5 py-2.5 font-body text-xs font-bold tracking-[0.08em] text-white uppercase transition-colors hover:bg-ink sm:inline-block"
+            className="hidden rounded-full bg-maroon px-5 py-2.5 font-body text-xs font-semibold tracking-[0.08em] text-white uppercase transition-colors hover:bg-maroon-dark sm:inline-block"
           >
-            Burgers
+            View Menu
           </Link>
 
           <button
@@ -46,7 +46,7 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-2 rounded-full border-2 border-ink px-4 py-2 font-body text-xs font-bold tracking-[0.08em] text-ink uppercase transition-colors hover:bg-ink hover:text-beige"
+            className="flex items-center gap-2 rounded-full border-2 border-maroon px-4 py-2 font-body text-xs font-semibold tracking-[0.08em] text-maroon uppercase transition-colors hover:bg-maroon hover:text-cream"
           >
             <span>{open ? "Close" : "Menu"}</span>
             <span className="relative block h-3 w-4" aria-hidden="true">
@@ -76,7 +76,7 @@ export default function Nav() {
       <nav
         id="mobile-menu"
         className={clsx(
-          "fixed inset-x-0 top-[72px] z-40 origin-top overflow-hidden bg-ink text-beige transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "fixed inset-x-0 top-[72px] z-40 origin-top overflow-hidden bg-maroon text-cream transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >
@@ -86,15 +86,15 @@ export default function Nav() {
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-beige/15 py-4 font-display text-4xl tracking-wide transition-colors hover:text-mustard sm:text-5xl"
+                className="block border-b border-cream/15 py-4 font-display text-3xl font-semibold tracking-wide transition-colors hover:text-gold sm:text-4xl"
               >
                 {item.label}
               </Link>
             </li>
           ))}
         </ul>
-        <p className="mx-auto max-w-[1280px] px-6 pb-8 font-body text-xs tracking-[0.08em] text-beige/60 uppercase sm:px-8 lg:px-12">
-          Est. 1997 — Navarra, España
+        <p className="mx-auto max-w-[1280px] px-6 pb-8 font-body text-xs tracking-[0.08em] text-cream/60 uppercase sm:px-8 lg:px-12">
+          {siteInfo.address.full}
         </p>
       </nav>
     </header>
