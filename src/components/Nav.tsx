@@ -108,7 +108,7 @@ export default function Nav() {
         id="mobile-menu"
         inert={!open ? true : undefined}
         className={clsx(
-          "fixed inset-x-0 top-[72px] z-40 origin-top overflow-hidden bg-maroon text-cream transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "fixed inset-x-0 top-[var(--nav-h)] z-40 origin-top overflow-hidden bg-maroon text-cream transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sm:top-[var(--nav-h-sm)]",
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
         )}
       >

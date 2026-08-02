@@ -7,6 +7,16 @@
   --cream: #f6ecdc;
   --ink: #241009;
   --white: #ffffff;
+
+  /* Sticky header offsets: single source of truth.
+     Nav's rendered height (py-4 padding + content row) is 68px at every
+     breakpoint (measured with Playwright at 375/640/768/1024/1280/1440/1920px
+     — the header does not actually grow at sm, unlike the old hardcoded
+     guesses it replaces). --category-nav-top stacks CategoryNav below
+     ScrollCart's h-6 (24px) track. */
+  --nav-h: 68px;
+  --nav-h-sm: 68px;
+  --category-nav-top: calc(var(--nav-h) + 24px);
 }
 
 @theme inline {

@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-10 border-t border-cream/15 pt-6 font-body text-xs tracking-[0.08em] text-cream/50 uppercase">
+        <p className="mt-10 border-t border-cream/15 pt-6 font-body text-xs tracking-[0.08em] text-cream/80 uppercase">
           © {new Date().getFullYear()} {siteInfo.legalName} (Company No.{" "}
           {siteInfo.companyNumber}) — All rights reserved
         </p>

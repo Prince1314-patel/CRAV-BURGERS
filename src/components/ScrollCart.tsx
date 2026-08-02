@@ -10,7 +10,7 @@ export default function ScrollCart() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 top-[64px] z-40 hidden h-6 sm:top-[76px] md:block"
+      className="pointer-events-none fixed inset-x-0 top-[var(--nav-h)] z-40 hidden h-6 sm:top-[var(--nav-h-sm)] md:block"
       aria-hidden="true"
     >
       <div className="absolute inset-x-6 top-1/2 h-px -translate-y-1/2 border-t border-dashed border-gold/50 lg:inset-x-12" />

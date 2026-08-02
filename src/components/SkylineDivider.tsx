@@ -4,7 +4,7 @@ export default function SkylineDivider({ className }: { className?: string }) {
       viewBox="0 0 1200 80"
       className={className}
       aria-hidden="true"
-      preserveAspectRatio="none"
+      preserveAspectRatio="xMidYMid slice"
     >
       <g fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.35">
         <rect x="40" y="20" width="14" height="55" />

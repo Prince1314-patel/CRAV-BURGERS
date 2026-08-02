@@ -3,7 +3,6 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import OrderOnline from "@/components/home/OrderOnline";
 import MenuTeaser from "@/components/home/MenuTeaser";
 import Gallery from "@/components/home/Gallery";
-import Team from "@/components/home/Team";
 import LocationHours from "@/components/home/LocationHours";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <MenuTeaser />
       <WhyChooseUs />
-      <Team />
       <Gallery />
       <OrderOnline />
       <LocationHours />

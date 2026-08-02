@@ -62,6 +62,8 @@ These are currently placeholder or best-guess values in the code. Please review 
 
 - **Team section (3 roles)** — the "meet the team" section on the homepage currently shows generic placeholder descriptions for 3 roles: Founder & Head Chef, Kitchen Lead, and Front of House. Please confirm the real names/roles you'd like shown, and whether you'd like real photos for each person (currently just a plain circle icon).
 
+  Team section (`src/components/home/Team.tsx`) is built but not currently shown on the homepage — it needs a real photo and name (not generic role placeholders) before re-adding it to `src/app/page.tsx`.
+
 - **Instagram / Facebook handles** — currently set to `@Streetbites` on both platforms, guessed from the business name and not yet verified. Please confirm the exact, correct profile links so the footer social buttons point to the right pages.
 
 - **Just Eat / Uber Eats links** — currently point to generic search-results pages for "Street Bites Wolverhampton" on each platform, not your restaurant's direct store page. Please send the direct links to your Just Eat and Uber Eats store pages so customers land exactly on your listing.
