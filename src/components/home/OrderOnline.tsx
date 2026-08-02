@@ -10,7 +10,7 @@ export default function OrderOnline() {
             Order Online
           </p>
           <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-cream">
-            Get Street Bites Delivered
+            Ready to Order?
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-cream/80">
             Order for delivery or collection through our partners below.

@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WhyChooseUs />
-      <OrderOnline />
       <MenuTeaser />
-      <Gallery />
+      <WhyChooseUs />
       <Team />
+      <Gallery />
+      <OrderOnline />
       <LocationHours />
     </>
   );
