@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import StickerImage from "@/components/StickerImage";
 
 const gallery = [
   { src: "/img-webp/about-1.webp", alt: "Chef preparing a fresh smashed burger" },
@@ -35,6 +36,13 @@ export default function TopClassic() {
             >
               Order Now
             </Link>
+
+            <div className="mt-14 hidden gap-6 sm:flex">
+              <StickerImage src="/img-webp/lettuce.webp" alt="Path — lettuce" size={84} tilt={-10} />
+              <StickerImage src="/img-webp/tomato.webp" alt="Path — tomato" size={84} tilt={8} />
+              <StickerImage src="/img-webp/cheese-logo.webp" alt="Path — cheese" size={84} tilt={-6} />
+              <StickerImage src="/img-webp/meat.webp" alt="Path — patty" size={84} tilt={12} />
+            </div>
           </Reveal>
 
           <Reveal delay={120} className="relative">
