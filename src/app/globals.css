@@ -1,40 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --beige: #f5e3cd;
-  --red: #f91814;
-  --mustard: #ffd750;
-  --mustard-dark: #f4a804;
-  --ink: #1b1b1b;
+  --maroon: #5c0f1f;
+  --maroon-dark: #3d0a15;
+  --gold: #e8b34b;
+  --cream: #f6ecdc;
+  --ink: #241009;
   --white: #ffffff;
 }
 
 @theme inline {
-  --color-beige: var(--beige);
-  --color-red: var(--red);
-  --color-mustard: var(--mustard);
-  --color-mustard-dark: var(--mustard-dark);
+  --color-maroon: var(--maroon);
+  --color-maroon-dark: var(--maroon-dark);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
   --color-ink: var(--ink);
   --color-white: var(--white);
 
-  --font-display: var(--font-modak), cursive;
-  --font-body: var(--font-mouse-memoirs), sans-serif;
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-poppins), sans-serif;
 
-  --radius-sm: 10px;
-  --radius-md: 24px;
-  --radius-lg: 48px;
-
-  --animate-float: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(var(--tilt, -6deg));
-  }
-  50% {
-    transform: translateY(-14px) rotate(var(--tilt, -6deg));
-  }
+  --radius-sm: 8px;
+  --radius-md: 20px;
+  --radius-lg: 40px;
 }
 
 html {
@@ -42,21 +30,21 @@ html {
 }
 
 body {
-  background: var(--beige);
+  background: var(--cream);
   color: var(--ink);
   font-family: var(--font-body);
 }
 
 ::selection {
-  background: var(--red);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--ink);
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--mustard);
+  outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
 
@@ -82,9 +70,5 @@ textarea:focus-visible {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .animate-float {
-    animation: none;
   }
 }

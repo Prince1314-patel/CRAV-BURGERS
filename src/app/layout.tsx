@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { Modak, Mouse_Memoirs } from "next/font/google";
+import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollCart from "@/components/ScrollCart";
 
-const modak = Modak({
-  weight: "400",
+const playfair = Playfair_Display({
+  weight: ["600", "700"],
   subsets: ["latin"],
-  variable: "--font-modak",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const mouseMemoirs = Mouse_Memoirs({
-  weight: "400",
+const poppins = Poppins({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-mouse-memoirs",
+  variable: "--font-poppins",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "CRAV | Artisan Smashed Burgers",
+  title: "Street Bites | Indian Street Food, Wolverhampton",
   description:
-    "Smashed hot on the flat top, topped with melted cheddar and our signature chili honey glaze. Crafted to satisfy your cravings since 1997. Est. 1997 — Navarra, España.",
+    "Authentic Indian street food in Wolverhampton — chaat, vada pav, momos, curries and more. 1A North Street, WV1 1RE. Order via Just Eat or Uber Eats, or visit us in person.",
 };
 
 export default function RootLayout({
@@ -30,9 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${modak.variable} ${mouseMemoirs.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-beige text-ink antialiased">
+    <html lang="en" className={`${playfair.variable} ${poppins.variable} h-full`}>
+      <body className="flex min-h-full flex-col bg-cream text-ink antialiased">
         <Nav />
+        <ScrollCart />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
