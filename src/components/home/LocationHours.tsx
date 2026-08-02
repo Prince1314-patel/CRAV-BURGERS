@@ -1,5 +1,15 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import Reveal from "@/components/Reveal";
 import { siteInfo } from "@/content/site";
+
+const RestaurantMap = dynamic(() => import("@/components/home/RestaurantMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-80 w-full rounded-md border-2 border-maroon/15 bg-maroon/5 lg:h-full lg:min-h-[360px]" />
+  ),
+});
 
 export default function LocationHours() {
   return (
@@ -32,15 +42,8 @@ export default function LocationHours() {
           </dl>
         </Reveal>
 
-        <Reveal delay={100} className="overflow-hidden rounded-md">
-          <iframe
-            id="map-destination"
-            src={siteInfo.mapEmbedSrc}
-            title="Map showing Street Bites location at 1A North Street, Wolverhampton"
-            className="h-80 w-full border-0 lg:h-full lg:min-h-[360px]"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        <Reveal delay={100}>
+          <RestaurantMap />
         </Reveal>
       </div>
     </section>

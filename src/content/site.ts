@@ -29,6 +29,6 @@ export const siteInfo = {
     { day: "Friday - Saturday", time: "12:00 PM - 11:00 PM" },
     { day: "Sunday", time: "1:00 PM - 9:00 PM" },
   ],
-  mapEmbedSrc:
-    "https://www.google.com/maps?q=1A+North+Street,+Wolverhampton,+WV1+1RE&output=embed",
+  // Geocoded from the address via OpenStreetMap Nominatim.
+  coordinates: { lat: 52.586, lng: -2.1298 },
 };

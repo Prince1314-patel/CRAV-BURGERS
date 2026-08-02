@@ -6,10 +6,20 @@ import { siteInfo } from "@/content/site";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-maroon pt-16 pb-20 text-cream sm:pt-20">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:items-center lg:px-12">
-        <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-white/5 px-4 py-1.5 font-body text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+    <section className="relative isolate flex min-h-[85dvh] items-center overflow-hidden text-cream">
+      <Image
+        src="/img/hero/storefront.jpg"
+        alt="Street Bites storefront on North Street, Wolverhampton, with the lit-up OPEN sign"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-maroon via-maroon/85 to-maroon/55" />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-20 sm:px-8 lg:px-12">
+        <Reveal className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-white/5 px-4 py-1.5 font-body text-xs font-semibold tracking-[0.2em] text-gold uppercase backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-gold" aria-hidden="true" />
             Now Open
           </span>
@@ -20,7 +30,7 @@ export default function Hero() {
             have arrived in <span className="text-gold">Wolverhampton</span>.
           </h1>
 
-          <p className="mt-6 max-w-lg font-body text-base leading-relaxed text-cream/80 sm:text-lg">
+          <p className="mt-6 max-w-lg font-body text-base leading-relaxed text-cream/90 sm:text-lg">
             Authentic flavours, fresh bites and unforgettable moments: chaat,
             momos, vada pav and curries, cooked fresh every day.
           </p>
@@ -40,24 +50,13 @@ export default function Hero() {
             </Link>
           </div>
 
-          <p className="mt-6 font-body text-xs font-semibold tracking-[0.15em] text-cream/50 uppercase">
+          <p className="mt-6 font-body text-xs font-semibold tracking-[0.15em] text-cream/60 uppercase">
             {siteInfo.address.full}
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-maroon/5">
-          <Image
-            src="/img/hero/storefront.jpg"
-            alt="Street Bites storefront on North Street, Wolverhampton, with the lit-up OPEN sign"
-            fill
-            priority
-            sizes="(min-width: 1024px) 560px, 100vw"
-            className="object-cover"
-          />
-        </Reveal>
+        <SkylineDivider className="mt-14 h-10 w-full text-cream/40" />
       </div>
-
-      <SkylineDivider className="mt-14 h-10 w-full text-cream/40" />
     </section>
   );
 }
