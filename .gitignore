@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# planning docs (local only)
+/docs/superpowers/
+
+# subagent-driven-development scratch workspace (local only)
+/.superpowers/
