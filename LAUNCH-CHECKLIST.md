@@ -2,53 +2,22 @@
 
 This is a plain-language checklist for the Street Bites team before the new website goes live. Nothing here requires coding — it's a list of photos to send over and details to confirm.
 
-## 1. Photos still needed
+## 1. Photos — status update
 
-The website currently has placeholder image slots at the file paths below. Until real photos are dropped into these exact locations (same file name, same folder), those spots on the site will show as broken/missing images. Send photos and we (or you, if you have file access) can drop them straight in — no code changes needed.
+All image slots are now filled (no more broken/missing images anywhere on the site). Here's what's real vs. what's a stand-in still worth upgrading:
 
-**Hero (1 photo)**
-- `public/img/hero/storefront.jpg` — the shopfront photo (the "STREETBITES · Indian Street Food" sign with the OPEN sign lit up)
+**Already real, no action needed:**
+- `public/img/hero/storefront.jpg` — your real shopfront photo (the "STREETBITES · Indian Street Food" sign with OPEN lit up). ✅
+- `public/img/cart-icon.png`, `src/app/favicon.ico`, `src/app/icon.png`, `src/app/apple-icon.png` — all now use your real cart-logo artwork (from the `favicon_io/` folder you added). ✅
+- Most menu-category and gallery photos were pulled directly from the dish photography embedded in `Street Bites Menu 3.pdf` — these are real photos of the actual style of dish (chaat, vada pav, momos, dosa, curries, drinks, etc.), not stock photos.
 
-**Menu Teaser — signature dishes (6 photos)**
-- `public/img/teaser/vada-pav.jpg`
-- `public/img/teaser/pani-puri.jpg`
-- `public/img/teaser/samosa-chaat.jpg`
-- `public/img/teaser/chole-bhature.jpg`
-- `public/img/teaser/chicken-momos.jpg`
-- `public/img/teaser/butter-chicken.jpg`
+**Worth upgrading when you have real photography:**
+- `public/img/teaser/pani-puri.jpg` and `public/img/teaser/samosa-chaat.jpg` both currently reuse the same general chaat-plate photo from the menu PDF (the PDF didn't have a dedicated close-up shot of either dish specifically). A proper pani puri and a proper samosa chaat photo would be a nice upgrade.
+- `public/img/menu/mains-rice.jpg` uses a big thali/spread photo from the PDF — great visually, but it's a mixed platter rather than one specific dish. Fine as-is, or swap for something more specific later.
+- `public/img/menu/milkshakes.jpg` and the milkshake gallery photo show mango and strawberry milkshakes from the PDF — if your actual milkshake flavours/presentation differ, a real photo would be more accurate.
+- Several gallery photos reuse the same images already used elsewhere on the site (there wasn't enough distinct PDF photography for all 8 gallery slots to be unique) — more variety would help once you have your own photography.
 
-**Gallery — general food/shop photos (8 photos)**
-- `public/img/gallery/dish-1.jpg`
-- `public/img/gallery/dish-2.jpg`
-- `public/img/gallery/dish-3.jpg`
-- `public/img/gallery/dish-4.jpg`
-- `public/img/gallery/dish-5.jpg`
-- `public/img/gallery/dish-6.jpg`
-- `public/img/gallery/dish-7.jpg`
-- `public/img/gallery/dish-8.jpg`
-
-**Full Menu page — one photo per menu category (15 photos)**
-- `public/img/menu/chaat-corner.jpg`
-- `public/img/menu/street-bites-special.jpg`
-- `public/img/menu/rolls-crispy-bites.jpg`
-- `public/img/menu/burgers-wraps-sandwiches.jpg`
-- `public/img/menu/chips-sides.jpg`
-- `public/img/menu/mains-rice.jpg`
-- `public/img/menu/momo-station.jpg`
-- `public/img/menu/dosa-corner.jpg`
-- `public/img/menu/indian-veg-curries.jpg`
-- `public/img/menu/chicken-curries.jpg`
-- `public/img/menu/paratha-corner.jpg`
-- `public/img/menu/tea-coffee.jpg`
-- `public/img/menu/soft-drinks.jpg`
-- `public/img/menu/energy-drinks.jpg`
-- `public/img/menu/milkshakes.jpg`
-
-**Other assets (2 items)**
-- `public/img/cart-icon.png` — a small icon of the wheeled food-cart logo mark (transparent background), used for the little animation that travels across the top of the page as visitors scroll
-- `src/app/favicon.ico` — replace with the real Street Bites logo mark (the browser-tab icon). We don't have a real icon file for this yet — please send a square logo image and we'll convert it.
-
-**Total: 31 photos + 1 icon/logo file = 32 assets needed before launch.**
+None of the above is urgent — everything currently shown is a real, on-brand food photo, just not always the *exact* dish or your own photography. Swap any file in place (same filename, same folder) whenever you have better photos, and it updates automatically.
 
 ## 2. Needs your confirmation before launch
 
