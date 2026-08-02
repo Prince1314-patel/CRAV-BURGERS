@@ -25,7 +25,7 @@ export default function MenuCategorySection({
         >
           <Reveal
             className={clsx(
-              "relative aspect-[4/3] w-full overflow-hidden rounded-lg",
+              "relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-maroon/5",
               imageOnRight && "lg:order-2",
             )}
           >

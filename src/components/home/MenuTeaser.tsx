@@ -48,7 +48,7 @@ export default function MenuTeaser() {
           {signatureDishes.map((dish, i) => (
             <Reveal key={dish.slug} delay={(i % 3) * 90}>
               <article className="overflow-hidden rounded-md border-2 border-maroon/15 bg-white">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[4/3] bg-maroon/5">
                   <Image
                     src={`/img/teaser/${dish.slug}.jpg`}
                     alt=""

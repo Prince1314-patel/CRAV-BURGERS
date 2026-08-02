@@ -28,7 +28,7 @@ export default function Gallery() {
           {galleryImages.map((image) => (
             <div
               key={image.src}
-              className="relative h-64 w-64 shrink-0 overflow-hidden rounded-md sm:h-80 sm:w-80"
+              className="relative h-64 w-64 shrink-0 overflow-hidden rounded-md bg-maroon/5 sm:h-80 sm:w-80"
             >
               <Image
                 src={image.src}

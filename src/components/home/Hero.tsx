@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={120} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+        <Reveal delay={120} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-maroon/5">
           <Image
             src="/img/hero/storefront.jpg"
             alt="Street Bites storefront on North Street, Wolverhampton, with the lit-up OPEN sign"

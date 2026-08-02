@@ -34,6 +34,12 @@ export default function OrderOnline() {
           >
             Order on Uber Eats
           </a>
+          <a
+            href={`tel:${siteInfo.phone}`}
+            className="rounded-full border-2 border-gold px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-gold uppercase transition-colors hover:bg-gold hover:text-ink"
+          >
+            Or call us: {siteInfo.phoneDisplay}
+          </a>
         </Reveal>
       </div>
     </section>
