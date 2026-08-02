@@ -28,13 +28,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/menu"
-              className="rounded-full bg-gold px-7 py-3.5 font-body text-sm font-semibold tracking-[0.08em] text-ink uppercase transition-colors hover:bg-white"
+              className="rounded-full bg-gold px-7 py-3.5 font-body text-sm font-semibold tracking-[0.08em] text-ink uppercase transition-[background-color,transform] duration-150 ease-out hover:bg-white active:scale-[0.97]"
             >
               View Menu
             </Link>
             <Link
               href="#order-online"
-              className="rounded-full border-2 border-cream/40 px-7 py-3.5 font-body text-sm font-semibold tracking-[0.08em] text-cream uppercase transition-colors hover:border-gold hover:text-gold"
+              className="rounded-full border-2 border-cream/40 px-7 py-3.5 font-body text-sm font-semibold tracking-[0.08em] text-cream uppercase transition-[color,border-color,transform] duration-150 ease-out hover:border-gold hover:text-gold active:scale-[0.97]"
             >
               Order Online
             </Link>

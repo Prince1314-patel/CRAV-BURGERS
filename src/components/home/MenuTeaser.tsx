@@ -38,7 +38,7 @@ export default function MenuTeaser() {
           </div>
           <Link
             href="/menu"
-            className="rounded-full bg-maroon px-6 py-3 font-body text-sm font-semibold tracking-[0.08em] text-white uppercase transition-colors hover:bg-maroon-dark"
+            className="rounded-full bg-maroon px-6 py-3 font-body text-sm font-semibold tracking-[0.08em] text-white uppercase transition-[background-color,transform] duration-150 ease-out hover:bg-maroon-dark active:scale-[0.97]"
           >
             View Full Menu →
           </Link>

@@ -19,7 +19,7 @@ export default function OrderOnline() {
             href={siteInfo.delivery.justEat}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gold px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-ink uppercase transition-colors hover:bg-white"
+            className="rounded-full bg-gold px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-ink uppercase transition-[background-color,transform] duration-150 ease-out hover:bg-white active:scale-[0.97]"
           >
             Order on Just Eat
           </a>
@@ -27,13 +27,13 @@ export default function OrderOnline() {
             href={siteInfo.delivery.uberEats}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border-2 border-cream/40 px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-cream uppercase transition-colors hover:border-gold hover:text-gold"
+            className="rounded-full border-2 border-cream/40 px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-cream uppercase transition-[color,border-color,transform] duration-150 ease-out hover:border-gold hover:text-gold active:scale-[0.97]"
           >
             Order on Uber Eats
           </a>
           <a
             href={`tel:${siteInfo.phone}`}
-            className="rounded-full border-2 border-gold px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-gold uppercase transition-colors hover:bg-gold hover:text-ink"
+            className="rounded-full border-2 border-gold px-8 py-4 font-body text-sm font-semibold tracking-[0.08em] text-gold uppercase transition-[background-color,color,transform] duration-150 ease-out hover:bg-gold hover:text-ink active:scale-[0.97]"
           >
             Or call us: {siteInfo.phoneDisplay}
           </a>

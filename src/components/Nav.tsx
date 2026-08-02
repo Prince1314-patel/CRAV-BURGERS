@@ -66,7 +66,7 @@ export default function Nav() {
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
             href="/menu"
-            className="hidden rounded-full bg-maroon px-5 py-2.5 font-body text-xs font-semibold tracking-[0.08em] text-white uppercase transition-colors hover:bg-maroon-dark sm:inline-block"
+            className="hidden rounded-full bg-maroon px-5 py-2.5 font-body text-xs font-semibold tracking-[0.08em] text-white uppercase transition-[background-color,transform] duration-150 ease-out hover:bg-maroon-dark active:scale-[0.97] sm:inline-block"
           >
             View Menu
           </Link>
@@ -78,7 +78,7 @@ export default function Nav() {
             aria-controls="mobile-menu"
             aria-label={open ? "Close navigation" : "Open navigation"}
             onClick={() => setOpen((v) => !v)}
-            className="flex items-center justify-center rounded-full border-2 border-maroon p-3 text-maroon transition-colors hover:bg-maroon hover:text-cream"
+            className="flex items-center justify-center rounded-full border-2 border-maroon p-3 text-maroon transition-[background-color,color,transform] duration-150 ease-out hover:bg-maroon hover:text-cream active:scale-[0.97]"
           >
             <span className="relative block h-3.5 w-5" aria-hidden="true">
               <span

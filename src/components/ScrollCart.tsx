@@ -2,7 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useMotionTemplate,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 
 const START_TOP = 96;
 const CART_SIZE = 44;
@@ -51,17 +57,19 @@ export default function ScrollCart() {
     };
   }, []);
 
-  const top = useTransform(
+  const y = useTransform(
     scrollYProgress,
     [0, path?.endProgress ?? 1],
     [START_TOP, path?.endTop ?? START_TOP],
   );
-  const left = useTransform(
+  const x = useTransform(
     scrollYProgress,
     [0, path?.endProgress ?? 1],
     [path?.startLeft ?? 24, path?.endLeft ?? 24],
   );
   const wheelRotation = useTransform(scrollYProgress, [0, path?.endProgress ?? 1], [0, 1080]);
+  const transform = useMotionTemplate`translate(${x}px, ${y}px)`;
+  const wheelTransform = useMotionTemplate`rotate(${wheelRotation}deg)`;
 
   if (!path) return null;
 
@@ -71,9 +79,11 @@ export default function ScrollCart() {
 
   return (
     <motion.div
-      className="pointer-events-none absolute z-40"
+      className="pointer-events-none absolute top-0 left-0 z-40"
       style={
-        prefersReducedMotion ? { top: path.endTop, left: path.endLeft } : { top, left }
+        prefersReducedMotion
+          ? { transform: `translate(${path.endLeft}px, ${path.endTop}px)` }
+          : { transform }
       }
       aria-hidden="true"
     >
@@ -93,7 +103,7 @@ export default function ScrollCart() {
             height: wheelSize,
             left: wheelCenterLeft - wheelSize / 2,
             top: wheelCenterTop - wheelSize / 2,
-            ...(prefersReducedMotion ? {} : { rotate: wheelRotation }),
+            ...(prefersReducedMotion ? {} : { transform: wheelTransform }),
           }}
         >
           <svg viewBox="0 0 20 20" className="h-full w-full overflow-visible">
