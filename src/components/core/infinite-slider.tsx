@@ -74,7 +74,6 @@ export function InfiniteSlider({
     }
 
     return () => controls.stop();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, translation, currentDuration, size, gap, isTransitioning, direction, reverse]);
 
   const hoverProps = durationOnHover
