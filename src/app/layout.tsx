@@ -35,7 +35,9 @@ export default function RootLayout({
       <body className="relative flex min-h-full flex-col bg-cream text-ink antialiased">
         <Nav />
         <ScrollCart />
-        <main className="flex-1">{children}</main>
+        <main id="page-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

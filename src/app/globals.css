@@ -8,15 +8,11 @@
   --ink: #241009;
   --white: #ffffff;
 
-  /* Sticky header offsets: single source of truth.
-     Nav's rendered height (py-4 padding + content row) is 68px at every
-     breakpoint (measured with Playwright at 375/640/768/1024/1280/1440/1920px
-     — the header does not actually grow at sm, unlike the old hardcoded
-     guesses it replaces). --category-nav-top stacks CategoryNav below
-     ScrollCart's h-6 (24px) track. */
+  /* Sticky header offset: single source of truth. Nav's rendered height
+     (py-4 padding + content row) is 68px at every breakpoint (measured with
+     Playwright at 375/640/768/1024/1280/1440/1920px). */
   --nav-h: 68px;
   --nav-h-sm: 68px;
-  --category-nav-top: calc(var(--nav-h) + 24px);
 }
 
 @theme inline {
@@ -54,8 +50,13 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--maroon);
   outline-offset: 2px;
+}
+
+.bg-maroon a:focus-visible,
+.bg-maroon button:focus-visible {
+  outline-color: var(--gold);
 }
 
 .reveal {

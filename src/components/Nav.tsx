@@ -25,6 +25,23 @@ export default function Nav() {
   }, [open]);
 
   useEffect(() => {
+    const pageContent = document.getElementById("page-content");
+    const footer = document.querySelector("footer");
+    for (const el of [pageContent, footer]) {
+      if (!el) continue;
+      if (open) {
+        el.setAttribute("inert", "");
+      } else {
+        el.removeAttribute("inert");
+      }
+    }
+    return () => {
+      pageContent?.removeAttribute("inert");
+      footer?.removeAttribute("inert");
+    };
+  }, [open]);
+
+  useEffect(() => {
     if (!open) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -60,8 +77,21 @@ export default function Nav() {
           className="font-display text-2xl font-bold tracking-wide text-maroon sm:text-3xl"
           onClick={() => setOpen(false)}
         >
-          Street <span className="text-gold">Bites</span>
+          Street <span className="text-ink">Bites</span>
         </Link>
+
+        <ul className="hidden items-center gap-8 lg:flex">
+          {menuItems.slice(1).map((item) => (
+            <li key={item.label}>
+              <Link
+                href={item.href}
+                className="font-body text-sm font-semibold tracking-[0.04em] text-ink/80 uppercase transition-colors hover:text-maroon"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
@@ -78,7 +108,7 @@ export default function Nav() {
             aria-controls="mobile-menu"
             aria-label={open ? "Close navigation" : "Open navigation"}
             onClick={() => setOpen((v) => !v)}
-            className="flex items-center justify-center rounded-full border-2 border-maroon p-3 text-maroon transition-[background-color,color,transform] duration-150 ease-out hover:bg-maroon hover:text-cream active:scale-[0.97]"
+            className="flex items-center justify-center rounded-full border-2 border-maroon p-3 text-maroon transition-[background-color,color,transform] duration-150 ease-out hover:bg-maroon hover:text-cream active:scale-[0.97] lg:hidden"
           >
             <span className="relative block h-3.5 w-5" aria-hidden="true">
               <span

@@ -2,10 +2,15 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { InfiniteSlider } from "@/components/core/infinite-slider";
 
-const galleryImages = Array.from({ length: 8 }, (_, i) => ({
-  src: `/img/gallery/dish-${i + 1}.jpg`,
-  alt: `Street Bites dish photo ${i + 1}`,
-}));
+// Only the gallery photos not already shown in the Menu Teaser section above
+// are listed here, so the same dish doesn't appear twice on one screen.
+const galleryImages = [
+  { src: "/img/gallery/dish-3.jpg", alt: "Crispy spring rolls" },
+  { src: "/img/gallery/dish-4.jpg", alt: "Masala fries with dips" },
+  { src: "/img/gallery/dish-5.jpg", alt: "Burger and sandwich" },
+  { src: "/img/gallery/dish-7.jpg", alt: "Fresh dosa with sauces" },
+  { src: "/img/gallery/dish-8.jpg", alt: "Fruit milkshakes" },
+];
 
 export default function Gallery() {
   return (

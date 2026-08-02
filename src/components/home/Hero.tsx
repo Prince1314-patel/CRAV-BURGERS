@@ -11,7 +11,7 @@ export default function Hero() {
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-white/5 px-4 py-1.5 font-body text-xs font-semibold tracking-[0.2em] text-gold uppercase">
             <span className="h-2 w-2 rounded-full bg-gold" aria-hidden="true" />
-            Open Now
+            Now Open
           </span>
 
           <h1 className="mt-6 font-display text-[clamp(2.75rem,6vw,4.75rem)] leading-[1.02] font-black tracking-tight text-cream">
