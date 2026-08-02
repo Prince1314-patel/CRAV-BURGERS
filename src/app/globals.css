@@ -27,7 +27,7 @@
   --color-ink: var(--ink);
   --color-white: var(--white);
 
-  --font-display: var(--font-playfair), serif;
+  --font-display: var(--font-archivo), sans-serif;
   --font-body: var(--font-poppins), sans-serif;
 
   --radius-sm: 8px;

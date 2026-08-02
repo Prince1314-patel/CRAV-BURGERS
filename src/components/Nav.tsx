@@ -76,11 +76,11 @@ export default function Nav() {
             type="button"
             aria-expanded={open}
             aria-controls="mobile-menu"
+            aria-label={open ? "Close navigation" : "Open navigation"}
             onClick={() => setOpen((v) => !v)}
-            className="flex items-center gap-2 rounded-full border-2 border-maroon px-4 py-2 font-body text-xs font-semibold tracking-[0.08em] text-maroon uppercase transition-colors hover:bg-maroon hover:text-cream"
+            className="flex items-center justify-center rounded-full border-2 border-maroon p-3 text-maroon transition-colors hover:bg-maroon hover:text-cream"
           >
-            <span>{open ? "Close" : "Menu"}</span>
-            <span className="relative block h-3 w-4" aria-hidden="true">
+            <span className="relative block h-3.5 w-5" aria-hidden="true">
               <span
                 className={clsx(
                   "absolute left-0 h-[2px] w-4 bg-current transition-transform duration-300",

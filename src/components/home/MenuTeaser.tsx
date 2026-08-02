@@ -32,7 +32,7 @@ export default function MenuTeaser() {
             <p className="font-body text-xs font-semibold tracking-[0.25em] text-maroon uppercase">
               Signature Dishes
             </p>
-            <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-ink">
+            <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight text-ink">
               A Taste of the Menu
             </h2>
           </div>

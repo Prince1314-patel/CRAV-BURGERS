@@ -14,15 +14,15 @@ export default function Hero() {
             Open Now
           </span>
 
-          <h1 className="mt-6 font-display text-[clamp(2.75rem,6vw,4.5rem)] leading-[1.05] font-bold tracking-tight text-cream">
+          <h1 className="mt-6 font-display text-[clamp(2.75rem,6vw,4.75rem)] leading-[1.02] font-black tracking-tight text-cream">
             The streets of India
             <br />
             have arrived in <span className="text-gold">Wolverhampton</span>.
           </h1>
 
           <p className="mt-6 max-w-lg font-body text-base leading-relaxed text-cream/80 sm:text-lg">
-            Authentic flavours. Fresh bites. Unforgettable moments. Chaat,
-            momos, vada pav and curries — cooked fresh at {siteInfo.address.full}.
+            Authentic flavours, fresh bites and unforgettable moments: chaat,
+            momos, vada pav and curries, cooked fresh every day.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -39,6 +39,10 @@ export default function Hero() {
               Order Online
             </Link>
           </div>
+
+          <p className="mt-6 font-body text-xs font-semibold tracking-[0.15em] text-cream/50 uppercase">
+            {siteInfo.address.full}
+          </p>
         </Reveal>
 
         <Reveal delay={120} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-maroon/5">

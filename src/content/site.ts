@@ -25,9 +25,9 @@ export const siteInfo = {
     uberEats: "https://www.ubereats.com/gb/search?q=Street%20Bites%20Wolverhampton",
   },
   hours: [
-    { day: "Monday – Thursday", time: "12:00 PM – 10:00 PM" },
-    { day: "Friday – Saturday", time: "12:00 PM – 11:00 PM" },
-    { day: "Sunday", time: "1:00 PM – 9:00 PM" },
+    { day: "Monday - Thursday", time: "12:00 PM - 10:00 PM" },
+    { day: "Friday - Saturday", time: "12:00 PM - 11:00 PM" },
+    { day: "Sunday", time: "1:00 PM - 9:00 PM" },
   ],
   mapEmbedSrc:
     "https://www.google.com/maps?q=1A+North+Street,+Wolverhampton,+WV1+1RE&output=embed",

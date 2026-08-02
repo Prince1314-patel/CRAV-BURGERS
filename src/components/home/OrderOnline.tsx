@@ -6,10 +6,7 @@ export default function OrderOnline() {
     <section id="order-online" className="scroll-mt-24 bg-maroon py-16 text-cream sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 text-center sm:px-8 lg:px-12">
         <Reveal>
-          <p className="font-body text-xs font-semibold tracking-[0.25em] text-gold uppercase">
-            Order Online
-          </p>
-          <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-cream">
+          <h2 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight text-cream">
             Ready to Order?
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-cream/80">

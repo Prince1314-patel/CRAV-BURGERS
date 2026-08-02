@@ -6,10 +6,7 @@ export default function LocationHours() {
     <section id="location" className="scroll-mt-24 bg-cream py-16 sm:py-24">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:px-12">
         <Reveal>
-          <p className="font-body text-xs font-semibold tracking-[0.25em] text-maroon uppercase">
-            Find Us
-          </p>
-          <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.25rem)] font-bold tracking-tight text-ink">
+          <h2 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight text-ink">
             Visit Street Bites
           </h2>
 

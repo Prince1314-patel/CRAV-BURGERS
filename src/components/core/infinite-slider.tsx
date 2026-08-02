@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { animate, motion, useMotionValue } from "motion/react";
+import { animate, motion, useMotionValue, useReducedMotion } from "motion/react";
 
 type InfiniteSliderProps = {
   children: React.ReactNode;
@@ -28,6 +28,7 @@ export function InfiniteSlider({
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const node = containerRef.current;
@@ -42,7 +43,7 @@ export function InfiniteSlider({
   }, [direction]);
 
   useEffect(() => {
-    if (size === 0) return;
+    if (size === 0 || prefersReducedMotion) return;
 
     const contentSize = size + gap;
     const from = reverse ? -contentSize / 2 : 0;
@@ -74,7 +75,7 @@ export function InfiniteSlider({
     }
 
     return () => controls.stop();
-  }, [key, translation, currentDuration, size, gap, isTransitioning, direction, reverse]);
+  }, [key, translation, currentDuration, size, gap, isTransitioning, direction, reverse, prefersReducedMotion]);
 
   const hoverProps = durationOnHover
     ? {
@@ -88,6 +89,22 @@ export function InfiniteSlider({
         },
       }
     : {};
+
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className={className}
+        style={{
+          display: "flex",
+          gap: `${gap}px`,
+          flexDirection: direction === "horizontal" ? "row" : "column",
+          overflow: "auto",
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div className={className} style={{ overflow: "hidden" }}>
