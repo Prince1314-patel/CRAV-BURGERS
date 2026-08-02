@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { InfiniteSlider } from "@/components/core/infinite-slider";
 
 const galleryImages = Array.from({ length: 8 }, (_, i) => ({
   src: `/img/gallery/dish-${i + 1}.jpg`,
@@ -21,10 +22,7 @@ export default function Gallery() {
       </div>
 
       <Reveal delay={100} className="mt-10">
-        <div
-          className="flex gap-4 overflow-x-auto px-6 pb-4 [&::-webkit-scrollbar]:hidden sm:px-8 lg:px-12"
-          style={{ scrollbarWidth: "none" }}
-        >
+        <InfiniteSlider gap={16} duration={40} durationOnHover={120} className="px-6 sm:px-8 lg:px-12">
           {galleryImages.map((image) => (
             <div
               key={image.src}
@@ -39,7 +37,7 @@ export default function Gallery() {
               />
             </div>
           ))}
-        </div>
+        </InfiniteSlider>
       </Reveal>
     </section>
   );

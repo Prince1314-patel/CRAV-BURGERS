@@ -37,6 +37,7 @@ export default function LocationHours() {
 
         <Reveal delay={100} className="overflow-hidden rounded-md">
           <iframe
+            id="map-destination"
             src={siteInfo.mapEmbedSrc}
             title="Map showing Street Bites location at 1A North Street, Wolverhampton"
             className="h-80 w-full border-0 lg:h-full lg:min-h-[360px]"

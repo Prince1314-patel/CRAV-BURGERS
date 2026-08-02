@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-cream text-ink antialiased">
+      <body className="relative flex min-h-full flex-col bg-cream text-ink antialiased">
         <Nav />
         <ScrollCart />
         <main className="flex-1">{children}</main>
