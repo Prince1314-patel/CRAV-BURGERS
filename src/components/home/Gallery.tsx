@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import { InfiniteSlider } from "@/components/core/infinite-slider";
 
 // Only the gallery photos not already shown in the Menu Teaser section above
 // are listed here, so the same dish doesn't appear twice on one screen.
@@ -23,11 +22,12 @@ export default function Gallery() {
         </Reveal>
       </div>
 
-      <Reveal delay={100} className="mt-10">
-        <InfiniteSlider gap={16} duration={40} durationOnHover={120} className="px-6 sm:px-8 lg:px-12">
-          {galleryImages.map((image) => (
+      <Reveal delay={100} className="marquee mt-10 overflow-hidden">
+        <div className="marquee-track flex w-max gap-4 px-6 sm:px-8 lg:px-12">
+          {[...galleryImages, ...galleryImages].map((image, i) => (
             <div
-              key={image.src}
+              key={`${image.src}-${i}`}
+              aria-hidden={i >= galleryImages.length}
               className="relative h-64 w-64 shrink-0 overflow-hidden rounded-md bg-maroon/5 sm:h-80 sm:w-80"
             >
               <Image
@@ -39,7 +39,7 @@ export default function Gallery() {
               />
             </div>
           ))}
-        </InfiniteSlider>
+        </div>
       </Reveal>
     </section>
   );

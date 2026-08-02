@@ -72,6 +72,20 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-duration: 120s;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -81,5 +95,13 @@ textarea:focus-visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .marquee {
+    overflow-x: auto;
   }
 }

@@ -1,22 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { createMap } from "piri";
 import { animate, motion, useMotionValue, useReducedMotion, useTransform } from "motion/react";
 
 import Reveal from "@/components/Reveal";
-import { DottedMap } from "@/registry/magicui/dotted-map";
-import type { Marker } from "@/registry/magicui/dotted-map";
 
-type CityMarker = Marker & { label: string };
-
-const MUMBAI: CityMarker = { lat: 19.076, lng: 72.8777, size: 1.4, label: "Mumbai" };
-const LONDON: CityMarker = { lat: 51.5074, lng: -0.1278, size: 1.4, label: "London" };
-
-const markers: CityMarker[] = [MUMBAI, LONDON];
-
-const MAP_WIDTH = 160;
-const MAP_HEIGHT = 80;
+// Hand-placed points on the 200x100 viewBox below — a stylised route
+// illustration, not a geo-projected map.
+const MUMBAI = { x: 158, y: 62, label: "Mumbai" };
+const LONDON = { x: 40, y: 30, label: "London" };
 
 type Point = { x: number; y: number };
 
@@ -34,16 +26,12 @@ function quadTangentAngle(p0: Point, p1: Point, p2: Point, t: number): number {
   return (Math.atan2(dy, dx) * 180) / Math.PI;
 }
 
-function FlightPath({ from, to }: { from: Point; to: Point }) {
+const control: Point = { x: (MUMBAI.x + LONDON.x) / 2, y: Math.min(MUMBAI.y, LONDON.y) - 24 };
+const pathD = `M ${MUMBAI.x} ${MUMBAI.y} Q ${control.x} ${control.y} ${LONDON.x} ${LONDON.y}`;
+
+function FlightPath() {
   const prefersReducedMotion = useReducedMotion();
   const t = useMotionValue(0);
-
-  const control: Point = {
-    x: (from.x + to.x) / 2,
-    y: Math.min(from.y, to.y) - MAP_HEIGHT * 0.3,
-  };
-
-  const pathD = `M ${from.x} ${from.y} Q ${control.x} ${control.y} ${to.x} ${to.y}`;
 
   React.useEffect(() => {
     if (prefersReducedMotion) return;
@@ -56,51 +44,44 @@ function FlightPath({ from, to }: { from: Point; to: Point }) {
     return () => controls.stop();
   }, [prefersReducedMotion, t]);
 
-  const x = useTransform(t, (v) => quadPoint(from, control, to, v).x);
-  const y = useTransform(t, (v) => quadPoint(from, control, to, v).y);
-  const angle = useTransform(t, (v) => quadTangentAngle(from, control, to, v));
+  const x = useTransform(t, (v) => quadPoint(MUMBAI, control, LONDON, v).x);
+  const y = useTransform(t, (v) => quadPoint(MUMBAI, control, LONDON, v).y);
+  const angle = useTransform(t, (v) => quadTangentAngle(MUMBAI, control, LONDON, v));
+
+  if (prefersReducedMotion) return null;
 
   return (
-    <g style={{ pointerEvents: "none" }}>
+    <motion.g style={{ x, y, rotate: angle }}>
       <path
-        d={pathD}
-        fill="none"
-        stroke="var(--gold)"
-        strokeWidth={0.35}
-        strokeDasharray="1.6 1.4"
-        strokeLinecap="round"
-        opacity={0.55}
+        d="M -1.8 0 L 1.6 -0.65 L 0.5 0 L 1.6 0.65 Z"
+        fill="var(--maroon)"
+        stroke="var(--cream)"
+        strokeWidth={0.15}
+        strokeLinejoin="round"
       />
+    </motion.g>
+  );
+}
 
-      {!prefersReducedMotion && (
-        <motion.g style={{ x, y, rotate: angle }}>
-          <path
-            d="M -1.8 0 L 1.6 -0.65 L 0.5 0 L 1.6 0.65 Z"
-            fill="var(--maroon)"
-            stroke="var(--cream)"
-            strokeWidth={0.15}
-            strokeLinejoin="round"
-          />
-        </motion.g>
-      )}
+function CityDot({ point }: { point: Point & { label: string } }) {
+  return (
+    <g>
+      <circle cx={point.x} cy={point.y} r={1.4} fill="var(--maroon)" />
+      <text
+        x={point.x}
+        y={point.y - 3.8}
+        textAnchor="middle"
+        fontSize={4.5}
+        fill="var(--ink)"
+        className="font-body font-semibold"
+      >
+        {point.label}
+      </text>
     </g>
   );
 }
 
 export default function JourneyMap() {
-  // Computed independently of DottedMap's own internal projection so both
-  // marker positions are known up front (needed to draw the connecting path).
-  const positions = React.useMemo(() => {
-    const { addMarkers } = createMap({
-      width: MAP_WIDTH,
-      height: MAP_HEIGHT,
-      mapSamples: 1,
-    });
-    return (addMarkers as unknown as (m: CityMarker[]) => (CityMarker & Point)[])(
-      markers,
-    );
-  }, []);
-
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-8 lg:px-12">
@@ -117,35 +98,20 @@ export default function JourneyMap() {
           delay={100}
           className="relative mt-12 aspect-[2/1] w-full overflow-hidden rounded-lg bg-maroon/[0.03]"
         >
-          <DottedMap<CityMarker>
-            markers={markers}
-            width={MAP_WIDTH}
-            height={MAP_HEIGHT}
-            className="text-maroon/20"
-            markerColor="var(--maroon)"
-            dotRadius={0.35}
-            renderMarkerOverlay={({ marker, x, y, r, index }) => {
-              const isLast = index === markers.length - 1;
-
-              return (
-                <g>
-                  {isLast && (
-                    <FlightPath from={positions[0]} to={positions[1]} />
-                  )}
-                  <text
-                    x={x}
-                    y={y - r - 1.4}
-                    textAnchor="middle"
-                    fontSize={2.4}
-                    fill="var(--ink)"
-                    className="font-body font-semibold"
-                  >
-                    {marker.label}
-                  </text>
-                </g>
-              );
-            }}
-          />
+          <svg viewBox="0 0 200 100" className="h-full w-full">
+            <path
+              d={pathD}
+              fill="none"
+              stroke="var(--gold)"
+              strokeWidth={0.35}
+              strokeDasharray="1.6 1.4"
+              strokeLinecap="round"
+              opacity={0.55}
+            />
+            <FlightPath />
+            <CityDot point={MUMBAI} />
+            <CityDot point={LONDON} />
+          </svg>
         </Reveal>
       </div>
     </section>

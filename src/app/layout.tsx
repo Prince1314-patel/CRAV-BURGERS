@@ -3,7 +3,6 @@ import { Archivo, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import ScrollCart from "@/components/ScrollCart";
 
 const archivo = Archivo({
   weight: ["700", "800", "900"],
@@ -34,7 +33,6 @@ export default function RootLayout({
     <html lang="en" className={`${archivo.variable} ${poppins.variable} h-full`}>
       <body className="relative flex min-h-full flex-col bg-cream text-ink antialiased">
         <Nav />
-        <ScrollCart />
         <main id="page-content" className="flex-1">
           {children}
         </main>
