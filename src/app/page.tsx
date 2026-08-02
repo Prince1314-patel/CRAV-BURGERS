@@ -1,17 +1,21 @@
 import Hero from "@/components/home/Hero";
-import TopClassic from "@/components/home/TopClassic";
-import Experience from "@/components/home/Experience";
-import TakeAway from "@/components/home/TakeAway";
-import FeelItCta from "@/components/FeelItCta";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import OrderOnline from "@/components/home/OrderOnline";
+import MenuTeaser from "@/components/home/MenuTeaser";
+import Gallery from "@/components/home/Gallery";
+import Team from "@/components/home/Team";
+import LocationHours from "@/components/home/LocationHours";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <TopClassic />
-      <Experience />
-      <TakeAway />
-      <FeelItCta />
+      <WhyChooseUs />
+      <OrderOnline />
+      <MenuTeaser />
+      <Gallery />
+      <Team />
+      <LocationHours />
     </>
   );
 }
