@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import SkylineDivider from "@/components/SkylineDivider";
 import { siteInfo } from "@/content/site";
 
 const footerLinks = [
@@ -11,9 +11,16 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-maroon text-cream">
-      <SkylineDivider className="h-10 w-full text-gold/70" />
-      <div className="mx-auto max-w-[1280px] px-6 pt-10 pb-10 sm:px-8 lg:px-12">
+    <footer className="relative isolate overflow-hidden bg-maroon text-cream">
+      <Image
+        src="/img/hero/london-skyline.png"
+        alt="Line-art skyline of the London Eye, Big Ben, the Houses of Parliament and Tower Bridge"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-maroon via-maroon/90 to-maroon" />
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 pt-10 pb-10 sm:px-8 lg:px-12">
         <nav aria-label="Footer navigation">
           <ul className="flex flex-wrap gap-x-8 gap-y-3 border-b border-cream/15 pb-10 font-body text-sm font-semibold tracking-[0.08em] uppercase">
             {footerLinks.map((link) => (

@@ -8,8 +8,8 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[85dvh] items-center overflow-hidden text-cream">
       <Image
-        src="/img/hero/storefront.jpg"
-        alt="Street Bites storefront on North Street, Wolverhampton, with the lit-up OPEN sign"
+        src="/img/hero/india-skyline.png"
+        alt="Line-art skyline of India Gate, Qutub Minar, Lotus Temple and the Taj Mahal"
         fill
         priority
         sizes="100vw"
